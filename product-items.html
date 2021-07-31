@@ -1,0 +1,32 @@
+<link  rel="import" href="bower_components/polymer/polymer-element.html">
+<link rel="import" href="bower_components/polymer/lib/elements/dom-repeat.html">
+
+<dom-module id="product-items">
+    <template>
+        <div></div>
+    </template>
+</dom-module>
+
+<script>
+    class ProductItems extends Polymer.Element{
+        static get is(){
+            return "product-items"
+        }
+        
+        static get properties(){
+            return{
+                names:{
+                    value(){
+                        return[
+                            {name:"Jonh"},
+                            {name:"Scarlet"},
+                            {name:"Jonhson"}
+                        ]
+                    }
+                }
+            }
+        }
+    }
+    window.customElements.define(ProductItems.is , ProductItems)
+
+</script>

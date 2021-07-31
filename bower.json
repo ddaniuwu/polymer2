@@ -1,0 +1,23 @@
+{
+  "name": "CryptoPrice",
+  "authors": [
+    "ddaniuwu <luis.daniel132@outlook.es>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "iron-ajax": "PolymerElements/iron-ajax#^3.0.1",
+    "paper-spinner": "PolymerElements/paper-spinner#^3.0.2",
+    "polymer": "^2.0.0",
+    "iron-collapse": "PolymerElements/iron-collapse#^3.0.1"
+  }
+}

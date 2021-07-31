@@ -1,0 +1,26 @@
+<link  rel="import" href="bower_components/polymer/polymer-element.html">
+<link rel="import" href="bower_components/polymer/lib/elements/dom-repeat.html">
+<link rel="import" href="/product-items.html">
+
+<dom-module id="components-list">
+
+<template>
+        <dom-repeat items="[[names]]" >
+            <product-items >
+                [[item.name]]
+            </product-items>        
+        </dom-repeat>
+</template>  
+
+</dom-module>
+
+<script>
+    class ComponentItems extends Polymer.Element{
+        constructor(){}
+        static get is(){
+            return "components-list"
+        }
+    
+    }
+    window.customElements.define(ComponentItems.is, ComponentItems)
+</script>

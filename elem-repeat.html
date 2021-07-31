@@ -1,0 +1,45 @@
+<link  rel="import" href="bower_components/polymer/polymer-element.html">
+<link rel="import" href="bower_components/polymer/lib/elements/dom-repeat.html">
+<link rel="import" href="bower_components/paper-spinner/paper-spinner-lite.js">
+
+<dom-module id="repeat-item">
+    <template>
+
+        <div> Employee list: </div>
+      
+        <template is="dom-repeat" items="{{employees}}"> 
+<!--          <template is="dom-repeat" items="[[employees]]"> -->
+            <div>First name: <span>[[item.name]] - [[item.last]]</span></div>
+
+       <!--  </template> -->    
+        </template>
+
+        <paper-spinner-lite active></paper-spinner-lite>
+      </template>
+
+
+    <script>
+        class ItemElements extends Polymer.Element{
+            static get is() { return 'repeat-item'; }
+  static get properties() {
+    return {
+      employees: {
+        value() {
+          return [
+            {name: 'Bob', last: 'Smith'},
+            {name: 'Sally', last: 'Johnson'},
+            {name: 'Sally', last: 'Johnson'},
+            {name: 'Brand', last: 'Jaime'},
+            {name: 'Migueñ', last: 'Perez'},
+
+          ];
+        }
+      }
+    };
+  }
+        }
+        window.customElements.define(ItemElements.is , ItemElements)
+    
+    </script>
+</dom-module>
+

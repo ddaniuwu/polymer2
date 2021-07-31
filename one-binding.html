@@ -1,0 +1,55 @@
+
+<link rel="import" href="bower_components/polymer/polymer-element.html">
+<!--Enlace de datos unidireccional y estilos-->
+
+<link rel="import" href="./bower_components/iron-collapse/iron-collapse.js">
+
+
+<dom-module id="name-card">
+    <template>
+        <style>
+            :host{
+                display: flex;
+                flex-direction: column;
+                background-color: lawngreen;
+            }
+            h1{
+                color:red;
+                font-weight: bold;
+            }
+
+        </style>
+
+        <h1>[[nombre]]</h1>
+        <h3>  [[clasificacion]]</h3>
+        
+        <div> [[name.first]] </div>
+        <p on-click="handleChange">[[descripcion]]</p>
+    </template>
+    <script>
+        class NameCard extends Polymer.Element{
+            static get is(){return "name-card"}
+            constructor(){
+                super()
+                this.name = {first:'Luis'}
+            }
+            
+            static get properties(){
+                return{
+                    nombre:String,
+                    clasificacion: {
+                        type:String , 
+                         value:' Sin clasificacion'
+                    },
+                    descripcion:String   
+                }
+            }
+            handleChange(){
+                this.descripcion = this.descripcion.toUpperCase();
+            }
+
+        }
+        customElements.define(NameCard.is , NameCard)
+
+    </script>
+</dom-module>
